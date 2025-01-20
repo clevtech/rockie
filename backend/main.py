@@ -30,7 +30,7 @@ minio_client = Minio(
     secure=False
 )
 
-BUCKET_NAME = "my_files"
+BUCKET_NAME = "files"
 
 # Ensure the bucket exists
 try:
