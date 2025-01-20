@@ -1,11 +1,13 @@
 services:
 
   backend:
-    image: ${DOCKER_REGISTRY}backend:latest
+    image: 192.168.1.104:5000/backend:latest
     build: ./backend
     container_name: backend
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
     restart: always
+    ports:
+      - "81:8000"
     depends_on:
       - mongodb
     networks:
@@ -54,6 +56,8 @@ services:
       - minio
     networks:
       - umai_bridge
+    ports:
+      - "82:8000"
     restart: always
     deploy:
       resources:
