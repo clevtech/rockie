@@ -1,0 +1,12 @@
+sudo nano /etc/docker/daemon.json
+
+```
+{
+  "insecure-registries" : ["your-registry-ip:port"]
+}
+```
+
+save and exit.
+
+
+sudo systemctl restart docker
