@@ -25,7 +25,7 @@ collection = db["my_collection"]
 # MinIO Setup
 minio_client = Minio(
     "minio:9000",
-    access_key="ml",
+    access_key="clevtech",
     secret_key="clevtech",
     secure=False
 )

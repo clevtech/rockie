@@ -4,7 +4,7 @@ services:
     image: 192.168.1.104:5000/backend:latest
     build: ./backend
     container_name: backend
-    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload 
     restart: always
     ports:
       - "81:8000"
@@ -70,10 +70,8 @@ services:
   minio:
     image: minio/minio:latest
     container_name: minio
-    logging:
-      driver: "none"
     environment:
-      MINIO_ROOT_USER: ml
+      MINIO_ROOT_USER: clevtech
       MINIO_ROOT_PASSWORD: clevtech
     command: server /data --console-address ":9090"
     ports:
@@ -83,7 +81,7 @@ services:
     networks:
       - umai_bridge
     volumes:
-      - ./volumes/minio_hot/minio_data:/data
+      - ./volumes/minio_data:/data
 
 
 networks:
