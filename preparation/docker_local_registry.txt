@@ -2,7 +2,13 @@ sudo nano /etc/docker/daemon.json
 
 ```
 {
-  "insecure-registries" : ["your-registry-ip:port"]
+    "runtimes": {
+        "nvidia": {
+            "args": [],
+            "path": "nvidia-container-runtime"
+        }
+    },
+    "insecure-registries" : ["192.168.1.104:5000"]
 }
 ```
 
