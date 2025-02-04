@@ -48,7 +48,7 @@ services:
       - umai_bridge
 
   ml:
-    image: 192.168.1.104:5000/recorder:latest
+    image: 192.168.1.104:5000/ml:latest
     build: ./ml
     container_name: ml
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
